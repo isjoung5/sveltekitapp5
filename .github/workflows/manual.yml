@@ -1,8 +1,7 @@
-name: dev auto ci process script
+name: Manual workflow
 on: push
 jobs:
   deploy:
-    name: deploy
     runs-on: ubuntu-latest
     steps:
     - name: excuting remote ssh commands
@@ -12,3 +11,4 @@ jobs:
         username: ${{ secrets.SERVER_S_USER }}
         password: ${{ secrets.SERVER_S_PASSWORD }}
         port: ${{ secrets.SERVER_SSH_PORT }}
+        script: cd /var/work
